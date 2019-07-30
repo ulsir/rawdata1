@@ -1,31 +1,42 @@
 {
-  "name": "Sysytem Odlicznia",
-  "temp": "60",
+  "name": "System Odliczania [minuty]",
+  "temp": "",
   "event-type": "3",
-  "_id": "Tqgsn",
+  "_id": "iRPpI",
   "actions": [
     {
-      "storage": "4",
-      "varName": "odliczajCZAS",
-      "toChange": "name",
-      "newState": "🕗Koniec za: ${serverVars(\"godzinaODLICZANIE\")}:${serverVars(\"minutaODLICZNIEsystem\")}",
-      "name": "Edit Channel"
-    },
-    {
       "time": "1",
-      "measurement": "3",
-      "name": "Wait Mod"
+      "measurement": "2",
+      "name": "Wait"
     },
     {
-      "storage": "4",
-      "varName": "odliczajCZAS",
-      "toChange": "name",
-      "newState": "🕗Koniec za: ${serverVars(\"godzinaODLICZNIEsystem\")}:${serverVars(\"minutaODLICZNIEsystem\")}",
-      "name": "Edit Channel"
+      "FirstNumber": "${serverVars(\"miunutaODLICZANIE\")}",
+      "info": "1",
+      "SecondNumber": "1",
+      "storage": "2",
+      "varName": "minutaODLICZNIEsystem",
+      "name": "Basic Math Operation"
     },
     {
-      "call": "3",
-      "name": "Jump to Action"
+      "storage": "2",
+      "varName": "minutaODLICZNIEsystem",
+      "comparison": "4",
+      "value": "10",
+      "iftrue": "3",
+      "iftrueVal": "1",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "code": "var min = ServerVars(\"minutaODLICZNIEsystem\").toString();\n\nif (min < 10) {\n    var min2 = '0' + min;\n    console.log(min2);\n} else {\n    min2;\n    console.log(min2);\n};\n\nthis.storeValue(min2, 1, \"minute\", cache);",
+      "behavior": "0",
+      "interpretation": "0",
+      "storage": "0",
+      "varName": "",
+      "VTypeSelect": "0",
+      "CVTypeValue": "",
+      "name": "Run Script"
     }
   ]
 }
