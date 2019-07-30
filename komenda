@@ -1,3 +1,4 @@
+
 {
   "name": "odliczaj",
   "permissions": "ADMINISTRATOR",
@@ -66,16 +67,22 @@
     },
     {
       "channelName": "${tempVars(\"text\")}",
-      "categoryID": "",
-      "bitrate": "",
-      "userLimit": "",
-      "storage": "2",
-      "varName": "odliczajTEXT",
-      "name": "Create Voice Channel"
+      "position": "",
+      "storage": "1",
+      "varName": "category",
+      "name": "Create Category Channel"
+    },
+    {
+      "channel": "3",
+      "varName": "category",
+      "info": "1",
+      "storage": "1",
+      "varName2": "idcategory",
+      "name": "Store Channel Info"
     },
     {
       "channelName": "${serverVars(\"godzinaODLICZANIE\")}:${serverVars(\"miunutaODLICZANIE\")}",
-      "categoryID": "",
+      "categoryID": "${tempVars(\"idcategory\")}",
       "bitrate": "",
       "userLimit": "",
       "storage": "2",
