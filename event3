@@ -1,0 +1,37 @@
+{
+  "name": "System Odliczania [minuty]",
+  "temp": "60",
+  "event-type": "3",
+  "_id": "iRPpI",
+  "actions": [
+    {
+      "FirstNumber": "${serverVars(\"miunutaODLICZANIE\")}",
+      "info": "1",
+      "SecondNumber": "1",
+      "storage": "2",
+      "varName": "minutaODLICZNIEsystem",
+      "name": "Basic Math Operation"
+    },
+    {
+      "storage": "2",
+      "varName": "minutaODLICZNIEsystem",
+      "comparison": "4",
+      "value": "10",
+      "iftrue": "3",
+      "iftrueVal": "1",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "code": "var min = ServerVars(\"minutaODLICZNIEsystem\").toString();\n\nif (min < 10) {\n    var min2 = '0' + min;\n    console.log(min2);\n} else {\n    min2;\n    console.log(min2);\n};\n\nthis.storeValue(min2, 1, \"minute\", cache);",
+      "behavior": "0",
+      "interpretation": "0",
+      "storage": "0",
+      "varName": "",
+      "VTypeSelect": "0",
+      "CVTypeValue": "",
+      "name": "Run Script"
+    }
+  ]
+}
