@@ -1,0 +1,21 @@
+{
+  "name": "System Odliczania [godziny]",
+  "temp": "",
+  "event-type": "3",
+  "_id": "AsYNH",
+  "actions": [
+    {
+      "time": "1",
+      "measurement": "3",
+      "name": "Wait"
+    },
+    {
+      "FirstNumber": "${serverVars(\"godzinaODLICZANIE\")}",
+      "info": "1",
+      "SecondNumber": "1",
+      "storage": "2",
+      "varName": "godzinaODLICZNIEsystem",
+      "name": "Basic Math Operation"
+    }
+  ]
+}
