@@ -1,0 +1,31 @@
+{
+  "name": "Sysytem Odlicznia",
+  "temp": "60",
+  "event-type": "3",
+  "_id": "Tqgsn",
+  "actions": [
+    {
+      "storage": "4",
+      "varName": "odliczajCZAS",
+      "toChange": "name",
+      "newState": "🕗Koniec za: ${serverVars(\"godzinaODLICZANIE\")}:${serverVars(\"minutaODLICZNIEsystem\")}",
+      "name": "Edit Channel"
+    },
+    {
+      "time": "1",
+      "measurement": "3",
+      "name": "Wait Mod"
+    },
+    {
+      "storage": "4",
+      "varName": "odliczajCZAS",
+      "toChange": "name",
+      "newState": "🕗Koniec za: ${serverVars(\"godzinaODLICZNIEsystem\")}:${serverVars(\"minutaODLICZNIEsystem\")}",
+      "name": "Edit Channel"
+    },
+    {
+      "call": "3",
+      "name": "Jump to Action"
+    }
+  ]
+}
